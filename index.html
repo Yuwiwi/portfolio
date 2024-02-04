@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Yuri Rubio</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Yuri Rubio </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-links">
+            <li><a href="#" onclick="toggleMenu()">About</a></li>
+            <li><a href="#" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="#" onclick="toggleMenu()">Skills</a></li>
+            <li><a href="#" onclick="toggleMenu()">Contact</a></li>
+        </div>
+        </div>
+    </nav>
+    <section id="profile">
+        <!-- PUT MY PROFILE PICTURE HERE LATER IN ASSETS FOLDER -->
+        <div class="section__pic-container"><img src="./assets/propro.png" alt="Yuri's Profile Picture">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Yuri Rubio</h1>
+            <p class="section__text__p2">Frontend Developer</p>
+            <div class="btn-container">
+                <!-- PUT MY CV LATER IN ASSETS FOLDER -->
+                <button class="btn btn-color-2" onclick="window.open('./assets')"
+                >Download CV</button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'"
+                >Contact Info</button>
+            </div>
+            <div id="socials-container">
+                <!-- <img src="./assets/" alt="My Facebook Profile" class="icon" onclick="location.href='https://www.facebook.com/zyuwiwi/'"> -->
+            </div>
+                <!-- <img src="./assets/" alt="My Github Profile" class="icon" onclick="location.href='https://github.com/Teppynos'"> -->
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
