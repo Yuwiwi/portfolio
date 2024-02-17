@@ -6,10 +6,11 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/scrollreveal"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -21,44 +22,87 @@
                     <!-- PUT MY PROFILE PICTURE HERE LATER IN ASSETS FOLDER -->
                     <div class="section__pic-container"><img src="./assets/profile.png" alt="Yuri's Profile Picture">
                     </div>
-                    <div class="section__text">
-                        <p class="section__text__p1">Hello, I'm</p>
-                        <h1 class="title">Yuri Rubio</h1>
-                        <p class="section__text__p2">Frontend Developer</p>
-        
-                        <div class="btn-container">
-                            <!-- PUT MY CV LATER IN ASSETS FOLDER -->
-                            <button class="btn btn-color-2" onclick="window.open('./assets')"
-                            >Download CV</button>
-                            <button class="btn btn-color-1" onclick="location.href='./#contact'"
-                            >Experience</button>
+
+                        <div class="home">
+                            <div class="home-text">
+                                <span>Frontend Developer</span>
+                                <h1>Yuri Rubio</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque fuga, est, iste voluptatibus dolor minima et at ducimus enim, nemo quaerat id labore eius placeat aperiam sed ratione porro dolorem!</p>
+                                <div class="btn-container">
+
+                                    <div id="socials-container">
+                                        <img src="./assets/facebook-logo-24.png" alt="My Facebook Profile" class="icon" onclick="location.href='https://www.facebook.com/zyuwiwi/'">
+                                        <img src="./assets/github-logo-24.png" alt="My Github Profile" class="icon" onclick="location.href='https://github.com/Yuwiwi/'">
+                                        <button class="btn btn-color-1" onclick="location.href='./#contact'">Hire Me</button>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
                         </div>
-                        <div id="socials-container">
-                            <img src="./assets/facebook-logo-24.png" alt="My Facebook Profile" class="icon" onclick="location.href='https://www.facebook.com/zyuwiwi/'">
-                            <img src="./assets/github-logo-24.png" alt="My Github Profile" class="icon" onclick="location.href='https://github.com/Yuwiwi/'">
-                        </div>
-                    </div>
                 </section>
             </div>
         </div>
     </section>
+
+    <!----------- PAGE 2 ----------->
     <section class="sec-02">
         <div class="container">
-            <h3 class="section-title">About Me</h3>
+            <h3 class="section-title-2">About Me</h3>
             <div class="content-2">
                 <div class="info">
                     <h4>Description</h4>
-                    <p id="cont">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt quibusdam animi saepe tempora minima libero rerum ducimus eaque aliquid dignissimos cum cumque, illum aut iure? Doloribus deserunt sapiente quia impedit.</p>
+                    <p id="cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam perspiciatis consequatur dolor ratione illo laborum quaerat quae minima cum aut, sit a soluta alias minus assumenda consectetur quasi dicta vitae.</p>
+                    <a href="./assets/CV - Yuri Rubio.pdf" download><button class="btn btn-color-2">Download CV</button></a>
                 </div>
             </div>
-            <div class="content-1">
-                <div class="info">
-                    <h4>Description</h4>
-                    <p id="cont">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt quibusdam animi saepe tempora minima libero rerum ducimus eaque aliquid dignissimos cum cumque, illum aut iure? Doloribus deserunt sapiente quia impedit.</p>
+
+        </div>
+        <div class="container">
+            <h3 class="section-title">Sample Projects</h3>
+
+            <div class="container">
+                <div class="scrollable-container">
+                  <div class="card-container">
+                    <div class="card">
+                      <img src="./assets/The Healthiest Social Pages.jpg" alt="Image 1">
+                      <div class="card-content">
+                        <h2>Facebook, Twitter, and Pinterest</h2>
+                        <p>I obviously created these softwares! Trust me bro</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img src="./assets/samurai.jpg" alt="Image 2">
+                      <div class="card-content">
+                        <h2>Washing! Shing!</h2>
+                        <p>hehe</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img src="./assets/cat.jpg" alt="Image 3">
+                      <div class="card-content">
+                        <h2>Catto!</h2>
+                        <p>Gattito gattito! purr</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <img src="./assets/bolt.jpg" alt="Image 4">
+                      <div class="card-content">
+                        <h2>WOWOWO</h2>
+                        <p>heheheheh</p>
+                      </div>
+                    </div>
+                    <!-- Add more cards as needed -->
+                  </div>
                 </div>
             </div>
+
+
+
         </div>
     </section>
+
+        
 
 
     <script src="script.js"></script>
