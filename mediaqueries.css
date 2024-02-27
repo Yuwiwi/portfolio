@@ -1,5 +1,40 @@
-@media screen and (max-width: 1850px){
+/* @media screen and (max-width: 1850px){
     #desktop-nav{
         display: none;
+    }
+} */
+
+
+@media (max-width: 1570px){
+    section{
+        padding: 80px 3%;
+        transition: .2s;
+    }
+    .contact-form h1{
+        font-size: 60px;
+    }
+    .contact-form p{
+        margin-bottom: 3rem;
+    }
+}
+@media (max-width: 1090px){
+    .contact{
+        grid-gap: 2rem;
+        transition: .2s;
+    }
+}
+@media (max-width: 1000px){
+    .contact{
+        grid-template-columns: 1fr;
+    }
+    .contact-form{
+        order: 2;
+    }
+    .contact-img img{
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin-bottom: 30px;
     }
 }

@@ -21,12 +21,13 @@ section{
 }
 .home{
     position: relative;
-    width: 100%;
+    width: 400px;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+    
 }
 .home-text span{
     padding: 5px 25px;
@@ -37,10 +38,12 @@ section{
     font-weight: 700;
     font-size: 15px;
     text-transform: uppercase;
+    margin-left: -150px;
 }
 .home-text h1{
     font-size: 55px;
     margin: 23px 0;
+    margin-left: -150px;
 }
 .home-text p{
     font-size: 15px;
@@ -48,6 +51,9 @@ section{
     color: c3c3c3;
     line-height: 20px;
     margin-bottom: 30px;
+    text-align: justify;
+    margin-left: -150px;
+    width: 400px;
 }
 
 
@@ -91,7 +97,7 @@ section{
 .content .text-box{
     z-index: 222;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px);        error */
     padding: 40px;
     max-width: 400px;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -133,7 +139,6 @@ section{
 .info{
     width: 600px;
     margin-left: 50px;
-    
 }
 
 
@@ -153,9 +158,10 @@ section{
 }
 .section__pic-container {
     display: flex;
-    height: 400px;
-    width: 400px;
-    margin: auto 0;
+    height: 700px;
+    width: 700px;
+    margin-bottom: 50px;
+    margin-right: 80px;
 }
 .section__text {
     align-self: center;
@@ -181,6 +187,7 @@ section{
     justify-content: center;
     margin-top: 1rem;
     gap: 1rem;
+    margin-left: -150px;
 }
 /* .socials-container:hover{
     transform: translateY(-10px);
@@ -210,29 +217,44 @@ section{
 .btn-color-1, .btn-color-2 {
     border: rgb(53, 53, 53) 0.1rem solid;
 }
+.btn-color-1contact{
+    border: rgb(53, 53, 53) 0.1rem solid;
+    margin-left: 10px;
+}
+.btn-color-1contact:hover{
+    background: #111222;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+    
+}
 .btn-color-1:hover, .btn-color-2:hover {
     cursor: pointer;
 }
-.btn-color-1:, .btn-color-2:hover {
+.btn-color-2:hover {
     background: rgb(53, 53, 53);
     color: white;
 }
 .btn-color-1:hover{
     background: #111222;
     color: white;
-    transform: translateY(-4px);
+    /* transform: translateY(-4px); */
+    transform: scale(1.1);
 }
 .btn-color-2 {
+    display: inline-block;
     background: none;
     color: #fff;
     margin-top: 20px;
-    margin-bottom: 400px;
+    margin-bottom: 20px;
+    margin-right: 1000px;
 }
 
 .btn-color-2:hover{
     background: white;
     color: #111222;
-    transform: translateY(-4px);
+    /* transform: translateY(-4px); */
+    transform: scale(1.1);
 }
 .btn-container {
     gap: 1rem;
@@ -305,22 +327,155 @@ section{
 }
 
 .info {
-  
   text-align: center;
-}
-
-.info h4 {
-  margin-bottom: 5px;
-  color: #555;
 }
 
 .info p {
   margin: 0;
   color: #777;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+
+
+
+.container-cards{
+  /* margin-bottom: 20px; */
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+li h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+li p {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+
+/* contact */
+.contact{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    align-items: center;
+    grid-gap: 6rem;
+}
+.contact-img img{
+    max-width: 100%;
+    width: 420px;
+    height: auto;
+    border-radius: 10px;
+}
+.contact-form h1{
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+span{
+    color: #c6c9d8bf;
+}
+.contact-form p{
+    color: #c6c9d8bf;
+    letter-spacing: 1px;
+    line-height: 26px;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+.contact-form form{
+    position: relative;
+}
+.contact-form form input
+,form textarea{
+    width: 100%;
+    padding: 17px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+.contact-form textarea{
+    resize: none;
+    height: 130px;
 }
 
 
 
 
 
-
+.arrow {
+    cursor: pointer;
+    display: inline-block;
+    width: 20px; /* Adjust arrow width */
+    height: 20px; /* Adjust arrow height */
+    border: solid #333; /* Arrow border color */
+    border-width: 0 2px 2px 0; /* Arrow shape */
+    transform: rotate(45deg); /* Rotate the arrow */
+    margin-left: 10px; /* Add space between arrow and text */
+  }
+  /* Modal styles (You can adjust these as per your design) */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #111222;
+    height: 70vh;
+    width: 70%;
+    padding: 50px;
+    position: absolute;
+    /* --------------------MODAL NGA GIPATUNGA POSITION---------------- */
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+  }
+  
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
