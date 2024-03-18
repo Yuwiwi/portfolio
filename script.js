@@ -1,12 +1,12 @@
-ScrollReveal({
-    reset:true,
-    distance: '60px',
-    duration: 2500,
-    delay: 400
-});
+// ScrollReveal({
+//     reset:true,
+//     distance: '60px',
+//     duration: 2500,
+//     delay: 400
+// });
 
 // ScrollReveal().reveal('.main-title, .section-title, .section-title-2', {delay: 500, origin: 'left'});
-ScrollReveal().reveal('#cont-text:not(.container-cards)', {delay: 150, origin: 'bottom'});
+// ScrollReveal().reveal('#cont-text:not(.container-cards)', {delay: 150, origin: 'bottom'});
 // ScrollReveal().reveal('.info', {delay: 700, origin: 'left'});
 
 
@@ -142,3 +142,46 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+
+
+
+
+// ADMIN JAVASCRIPT //
+const body = document.querySelector("body"),
+      modeToggle = body.querySelector(".mode-toggle");
+      sidebar = body.querySelector("nav");
+      sidebarToggle = body.querySelector(".sidebar-toggle");
+let getMode = localStorage.getItem("mode");
+if(getMode && getMode ==="dark"){
+    body.classList.toggle("dark");
+}
+let getStatus = localStorage.getItem("status");
+if(getStatus && getStatus ==="close"){
+    sidebar.classList.toggle("close");
+}
+modeToggle.addEventListener("click", () =>{
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")){
+        localStorage.setItem("mode", "dark");
+    }else{
+        localStorage.setItem("mode", "light");
+    }
+});
+sidebarToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+    if(sidebar.classList.contains("close")){
+        localStorage.setItem("status", "close");
+    }else{
+        localStorage.setItem("status", "open");
+    }
+})
+
+
+
+
+
+
+
+
