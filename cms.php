@@ -28,15 +28,26 @@
                 </a></li>
             </ul>
             
-            <ul class="logout-mode">
-                <li><a href="index.php">
-                    <i class='bx bx-arrow-back'></i>
-                    <span class="link-name">Logout</span>
-                </a></li>
-            </li>
-            </ul>
         </div>
     </nav>
+    <section class="content1">
+
+        <div class="input-container">
+            <label for="cms-input" class="input-label">CMS Input:</label>
+            <input type="text" id="cms-input" class="cms-input" placeholder="Enter your content here...">
+        </div>
+    </section>
+    <section class="content2">
+
+        <div class="input-container">
+            <label for="cms-input" class="input-label">Profile:</label>
+            <input type="text" id="cms-input" class="cms-input" placeholder="Enter your content here...">
+        </div>
+    </section>
+
+
+
+
 
     <script src="script.js"></script>
 </body>

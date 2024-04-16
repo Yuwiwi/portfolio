@@ -1,33 +1,41 @@
 <?php
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-        
-        $host = "localhost";
-        $dbusername = "root";
-        $dbpassword = "";
-        $dbname = "portfolio";
 
-        $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-        if($conn->connect_error) {
-            die("Connection failed: ". $conn->connect_error);
-        }
+$username = $_POST["username"];
+$password = $_POST["password"];
 
-        $query = "SELECT * FROM admin_user WHERE username='$username' AND password='$password'";
-        $result = $conn->query($query);
 
-        if($result->num_rows == 1) {
-            echo "<script>alert('Login Successful')</script>";
-            echo "<script>window.open('admin.php','_self')</script>";  
+$host = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "portfolio";
 
-        } else {
-          echo "<script>alert('Invalid, please try again!')</script>";
-        }
+$conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
 
-        $conn->close();
-    }
+if($conn->connect_error){
+  die("Connection failed: ". $conn->connect_error);
+  }
+
+  $query = "SELECT * FROM admin_user WHERE username='$username' AND password='$password'";
+  $result = $conn->query($query);
+
+  if($result->num_rows == 1){
+    header("Location: admin.php");
+    exit();
+  }
+
+  else{
+    header("Location: failed.php");
+    exit();
+  }
+  
+
+  $conn->close();
+}
+
 ?>
+
 
 
 <!DOCTYPE html>

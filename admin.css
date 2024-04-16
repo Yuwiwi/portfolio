@@ -30,7 +30,8 @@ nav{
 }
 
 nav .logo-name{
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
 nav .logo-image{
     display: flex;
@@ -38,10 +39,9 @@ nav .logo-image{
     min-width: 45px;
 }
 nav .logo-image img{
-    width: 150px;
+    width: 40px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid #ccc;
 }
 nav .logo-name .logo_name{
     font-size: 22px;
@@ -76,15 +76,6 @@ nav .menu-items{
     border-radius: 50%;
     background-color: #000000;
 }
-.logout-mode li a:hover:before{
-    content: "";
-    position: absolute;
-    left: -7px;
-    height: 5px;
-    width: 5px;
-    border-radius: 50%;
-    background-color: #ff0000;
-}
 .menu-items li a i{
     font-size: 24px;
     min-width: 45px;
@@ -102,18 +93,10 @@ nav .menu-items{
 }
 .nav-links li a:hover i,
 .nav-links li a:hover .link-name{
-    transition: transform 0.3s ease; 
     color: #000000;
-    transform: translateX(20px);
-}
-.logout-mode li a:hover i,
-.logout-mode li a:hover .link-name{
-    transition: transform 0.3s ease; 
-    color: #ff0000;
-    transform: translateX(20px);
 }
 .menu-items .logout-mode{
-    padding-bottom: 130px;
+    padding-top: 10px;
     border-top: 1px solid #e6e5e5;
 }
 .menu-items .mode{
@@ -130,6 +113,64 @@ nav .menu-items{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.mode-toggle .switch{
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: #DDD;
+}
+.switch:before{
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 15px;
+    background-color: #FFF;
+    border-radius: 50%;
+    transition: var(--tran-03);
+}
+.dashboard{
+    position: relative;
+    left: 250px;
+    background-color: #FFF;
+    min-height: 100vh;
+    width: calc(100% - 250px);
+    padding: 10px 14px;
+    transition: var(--tran-05);
+}
+.top img{
+    width: 40px;
+    border-radius: 50%;
+}
+.dashboard .dash-content{
+    padding-top: 50px;
+}
+.dash-content .title{
+    display: flex;
+    align-items: center;
+    margin: 60px 0 30px 0;
+}
+.dash-content .title i{
+    position: relative;
+    height: 35px;
+    width: 35px;
+    border-radius: 6px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+.dash-content .title .text{
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    margin-left: 10px;
 }
 @media (max-width: 1000px) {
     nav{
@@ -221,13 +262,11 @@ nav .menu-items{
 
 
 
-/* --------------------CMS--------------------- */
+
 
 .input-container {
     width: 300px; /* Adjust width as needed */
     margin: 50px auto;
-    flex-direction: column;
-    margin-top: 10px;
 }
 
 /* Style for input */
@@ -242,55 +281,7 @@ nav .menu-items{
 
 /* Style for input label */
 .input-label {
-
+    display: block;
     margin-bottom: 5px;
-
-    margin-right: 100px;
-}
-
-
-
-
-
-
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    margin-top: 0;
-}
-
-.form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-label {
     font-weight: bold;
-    margin-right: 10px;
-    width: 100px; /* Fixed width for labels */
-    text-align: right;
 }
-
-input[type="text"],
-textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    flex: 1;
-}
-
-textarea {
-    height: 150px;
-}
-
-
