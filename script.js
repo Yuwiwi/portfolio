@@ -1,12 +1,12 @@
-ScrollReveal({
-    reset:true,
-    distance: '60px',
-    duration: 2500,
-    delay: 400
-});
+// ScrollReveal({400
+//     reset:true,
+//     distance: '60px',
+//     duration: 2500,
+//     delay: 400
+// });
 
 // ScrollReveal().reveal('.main-title, .section-title, .section-title-2', {delay: 500, origin: 'left'});
-ScrollReveal().reveal('#cont-text:not(.container-cards)', {delay: 150, origin: 'bottom'});
+// ScrollReveal().reveal('#cont-text:not(.container-cards)', {delay: 150, origin: 'bottom'});
 // ScrollReveal().reveal('.info', {delay: 700, origin: 'left'});
 
 
@@ -115,30 +115,74 @@ document.addEventListener("DOMContentLoaded", function() {
 
   
 
-  var modal = document.getElementById("myModal");
+//   var modal = document.getElementById("myModal");
 
-// Get the arrow
-var arrow = document.createElement("span");
-arrow.className = "arrow";
-arrow.innerHTML = "&#10132;"; // Unicode for right arrow
+// // Get the arrow
+// var arrow = document.createElement("span");
+// arrow.className = "arrow";
+// arrow.innerHTML = "&#10132;"; // Unicode for right arrow
 
-// Append arrow to the paragraph
-document.getElementById("cont-text").appendChild(arrow);
+// // Append arrow to the paragraph
+// document.getElementById("cont-text").appendChild(arrow);
 
-// When the user clicks on the arrow, open the modal
-arrow.onclick = function() {
-  modal.style.display = "block";
+// // When the user clicks on the arrow, open the modal
+// arrow.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// // When the user clicks on <span> (x), close the modal
+// var span = document.getElementsByClassName("close")[0];
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+
+
+
+
+
+
+// ADMIN JAVASCRIPT //
+const body = document.querySelector("body"),
+      modeToggle = body.querySelector(".mode-toggle");
+      sidebar = body.querySelector("nav");
+      sidebarToggle = body.querySelector(".sidebar-toggle");
+let getMode = localStorage.getItem("mode");
+if(getMode && getMode ==="dark"){
+    body.classList.toggle("dark");
 }
-
-// When the user clicks on <span> (x), close the modal
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-  modal.style.display = "none";
+let getStatus = localStorage.getItem("status");
+if(getStatus && getStatus ==="close"){
+    sidebar.classList.toggle("close");
 }
+modeToggle.addEventListener("click", () =>{
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")){
+        localStorage.setItem("mode", "dark");
+    }else{
+        localStorage.setItem("mode", "light");
+    }
+});
+sidebarToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+    if(sidebar.classList.contains("close")){
+        localStorage.setItem("status", "close");
+    }else{
+        localStorage.setItem("status", "open");
+    }
+})
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+
+
+
+
+
+
+
+// ADMIN SIDE //

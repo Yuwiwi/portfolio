@@ -1,3 +1,31 @@
+<?php
+include 'connect.php'; // Include your database connection script
+
+// Fetch data from the database
+$sql_select = "SELECT * FROM crud WHERE id=1"; // Assuming the ID for the data you want to display is 1
+$result_select = mysqli_query($con, $sql_select);
+
+if (!$result_select) {
+    die("Error fetching data: " . mysqli_error($con));
+}
+
+// Fetch the row
+$row = mysqli_fetch_assoc($result_select);
+
+// Assign fetched data to variables
+$name = $row['name'];
+$description = $row['description'];
+$about = $row['about'];
+$about1t = $row['about1t'];
+$about1desc = $row['about1desc'];
+$projects = $row['projects'];
+$services = $row['services'];
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +42,8 @@
 </head>
 <body>
 
+
+
     <section class="sec-01">
         <div class="container">
 
@@ -26,8 +56,9 @@
                         <div class="home">
                             <div class="home-text">
                                 <span>Frontend Developer</span>
-                                <h1>Yuri Rubio</h1>
-                                <p>Sleek, dynamic front-end solutions designed to captivate users, elevate brand presence, and fuel conversions with seamless functionality.</p>
+                                <h1><?php echo $name; ?></h1>
+                                <!-- <p>Sleek, dynamic front-end solutions designed to captivate users, elevate brand presence, and fuel conversions with seamless functionality.</p> -->
+                                <p><?php echo $description; ?></p>
                                 <div class="btn-container">
 
                                     <div id="socials-container">
@@ -51,42 +82,18 @@
             <h3 class="section-title-2">ABOUT ME</h3>
             <div class="content-2">
                 <div class="info">
-                    <!-- <p id="cont-text">As a student Web Designer based in Philippines, I get to combine my love for technology and passion for design. I enjoy using my creativity
+
+                    <!-- <p id="cont">As a student Web Designer based in Philippines, I get to combine my love for technology and passion for design. I enjoy using my creativity
                       skills to create a digital experience for users. 
                       <br>
                       <br>
                       I believe that crafting digital experiences that captivate, inspire, and resonate with users worldwide. Every line of code, every color choice, and every interaction meticulously designed to transform ideas into beautiful realities on the web.
                       <br>
                       <br>
-                      Designing the web, one Pixel at a Time.
+                      Feel free to grab my resume for a closer look at my profile.
                     </p> -->
-
-                    <p id="cont-text">As a student Web Designer based in Philippines, I get to combine my love for technology and passion for design. I enjoy using my creativity
-                      skills to create a digital experience for users. 
-                      <br>
-                      <br>
-                      I believe that crafting digital experiences that captivate, inspire, and resonate with users worldwide. Every line of code, every color choice, and every interaction meticulously designed to transform ideas into beautiful realities on the web.
-                      <br>
-                      <br>
-                      Get to know more about me
+                    <p id="cont"><?php echo $about; ?>
                     </p>
-
-                    <!-- Modal -->
-                    <div id="myModal" class="modal">
-                      <!-- Modal content -->
-                      <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h3>Get to know me, friend</h3>
-                        <p>Designing the web, one Pixel at a Time.</p>
-                        <br>
-                        <br>
-
-                        <p>
-                          I LOVE TO SLEEP AND EAT BUT I LOVE MY GIRLFRIEND MORE!
-                          <br>
-                        </p>
-                      </div>
-                    </div>
 
 
                     <button id="downloadBtn" class="btn btn-color-2">My Resume</button>
@@ -96,8 +103,10 @@
                     <div class="container-cards">
                       <ul>
                         <li class="li-we">
-                          <h3>Web Design</h3>
-                          <p>Transforming concepts into captivating digital experiences</p>
+                          <!-- <h3>Web Design</h3> -->
+                          <h3><?php echo $about1t; ?></h3> 
+                          <p><?php echo $about1desc; ?></p>
+                          <!-- <p>Transforming concepts into captivating digital experiences</p> -->
                         </li>
                         <li class="li-we">
                           <h3>Graphic Design</h3>
@@ -105,7 +114,7 @@
                         </li>
                         <li class="li-we">
                           <h3>Digital Marketing</h3>
-                          <p>Elevating brands through strategic online presence and targeted engagement</p>
+                          <p>Digital marketing drives online success through promotion</p>
                         </li>
                       </ul>
                     </div>
@@ -166,28 +175,36 @@
 
         <div class="circle-grid">
           <div class="circle">
-            <img src="/assets/ps.jpg" alt="Photoshop">
+            <img src="assets/ps.jpg" alt="Photoshop">
+            <div class="description">#</div>
           </div>
           <div class="circle">
             <img src="assets/ai.jpg" alt="Illustrator">
+            <div class="description">#</div>
           </div>
           <div class="circle-lr">
             <img src="assets/lr.jpg" alt="Light room">
+            <div class="description">#</div>
           </div>
           <div class="circle-html">
             <img src="assets/html.jpg" alt="HTML">
+            <div class="description">#</div>
           </div>
           <div class="circle-js">
             <img src="assets/javas.jpg" alt="JavaScript">
+            <div class="description">#</div>
           </div>
           <div class="circle-css">
             <img src="assets/CSS.jpg" alt="CSS">
+            <div class="description">#</div>
           </div>
           <div class="circle-web-dev">
             <img src="assets/webdev.jpg" alt="Web Development">
+            <div class="description">#</div>
           </div>
           <div class="circle">
             <img src="assets/bootstrap.jpg" alt="Bootstrap">
+            <div class="description">#</div>
           </div>
         </div>
 
@@ -204,11 +221,14 @@
       <div id="txt-bottom">
       
         <h3 class="bottom-txt">
-          <span onclick="location.href='login.html'">Yuri</span> Rubio
+          <span onclick="location.href='login.php'">Yuri</span> Rubio
         </h3>
       </div>
       
     </section>
+
+
+
 
 
     <script src="script.js"></script>
