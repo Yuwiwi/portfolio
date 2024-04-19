@@ -13,19 +13,26 @@
     <nav>
         <div class="logo-name">
             <div class="logo-image">
-               <img src="./assets/profile.png" alt="">
+                <img src="./assets/profile.png">
             </div>
         </div>
         <div class="menu-items">
             <ul class="nav-links">
                 <li><a href="admin.php">
-                    <i class='bx bxs-dashboard' ></i>
+
+                    <i class='bx bxs-dashboard'></i>
                     <span class="link-name">Dashboard</span>
                 </a></li>
-                <li><a href="cms.php">
+
+                <li><a href="edit-content.php">
                     <i class='bx bxs-book-content'></i>
                     <span class="link-name">Edit Contents</span>
                 </a></li>
+                <li><a href="edit-images.php">
+                    <i class='bx bx-image'></i>
+                    <span class="link-name">Edit Images</span>
+                </a></li>
+
             </ul>
             
             <ul class="logout-mode">
@@ -33,11 +40,20 @@
                     <i class='bx bx-arrow-back'></i>
                     <span class="link-name">Logout</span>
                 </a></li>
+
             </li>
             </ul>
         </div>
     </nav>
 
+
+
+
     <script src="script.js"></script>
 </body>
 </html>
+=======
+    <script src="script.js"></script>
+</body>
+</html>
+

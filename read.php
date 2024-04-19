@@ -1,5 +1,9 @@
 <?php
 include 'connect.php';
+
+
+$buttonText = "Return";
+$buttonLink = "admin.php";
 ?>
 
 <!DOCTYPE html>
@@ -122,8 +126,13 @@ include 'connect.php';
         <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Projects</th>
-                    <th>Services</th>
+                    <th>About 1 Title</th>
+                    <th>About 1 Description</th>
+                    <th>About 2 Title</th>
+                    <th>About 2 Description</th>
+                    <th>About 3 Title</th>
+                    <th>About 3 Description</th>
+
                     <th>Operations</th>
                 </tr>
             </thead>
@@ -140,12 +149,22 @@ while($row = mysqli_fetch_assoc($result)) {
     $about = $row['about'];
     $projects = $row['projects'];
     $services = $row['services'];
+    $about1t = $row['about1t'];
+    $about2t = $row['about2t'];
+    $about3t = $row['about3t'];
+    $about1desc = $row['about1desc'];
+    $about2desc = $row['about2desc'];
+    $about3desc = $row['about3desc'];
 ?>
 
 <tr>
     <td><?php echo $id; ?></td>
-    <td><?php echo $projects; ?></td>
-    <td><?php echo $services; ?></td>
+    <td><?php echo $about1t; ?></td>
+    <td><?php echo $about1desc; ?></td>
+    <td><?php echo $about2t; ?></td>
+    <td><?php echo $about2desc; ?></td>
+    <td><?php echo $about3t; ?></td>
+    <td><?php echo $about3desc; ?></td>
     <td>
         <a href="update.php?updateid=<?php echo $id; ?>" class="btn btn-primary">Update</a>
         <a href="delete.php?deleteid=<?php echo $id; ?>" class="btn btn-danger">Remove</a>
@@ -157,6 +176,8 @@ while($row = mysqli_fetch_assoc($result)) {
 </tbody>
         </table>
     </div>
+
+    <a href="<?php echo $buttonLink; ?>" class="btn btn-danger"><?php echo $buttonText; ?></a>
 
 </body>
 </html>

@@ -18,7 +18,6 @@ include 'connect.php';
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #e6e5e5;
@@ -40,12 +39,17 @@ include 'connect.php';
             border-collapse: collapse;
             margin-bottom: 20px;
         }
-        table th, table td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
 
+        th {
+        background-color: #f2f2f2; /* Background color */
+        color: #333; /* Text color */
+        font-weight: bold; /* Bold text */
+        padding: 30px; /* Padding around content */
+        text-align: left; /* Align text to the left */
+        border-bottom: 2px solid #ddd; /* Bottom border */
+        margin: 120px;
         }
+
         table th {
             background-color: #f2f2f2;
         }
@@ -124,8 +128,8 @@ include 'connect.php';
                 $name = $row['name'];
                 $description = $row['description'];
                 $about = $row['about'];
-                $projects = $row['projects'];
-                $services = $row['services'];
+                // $projects = $row['projects'];
+                // $services = $row['services'];
             ?>
 
             <tr>
@@ -155,8 +159,12 @@ include 'connect.php';
         <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Projects</th>
-                    <th>Services</th>
+                    <th>About Me 1 Title</th>
+                    <th>About Me 1 Description</th>
+                    <th>About Me 2 Title</th>
+                    <th>About Me 2 Description</th>
+                    <th>About Me 3 Title</th>
+                    <th>About Me 3 Description</th>
                     <th>Operations</th>
                 </tr>
             </thead>
@@ -171,14 +179,90 @@ while($row = mysqli_fetch_assoc($result)) {
     $name = $row['name'];
     $description = $row['description'];
     $about = $row['about'];
-    $projects = $row['projects'];
-    $services = $row['services'];
+    $about1t = $row['about1t'];
+    $about1desc = $row['about1desc'];
+    $about2t = $row['about2t'];
+    $about2desc = $row['about2desc'];
+    $about3t = $row['about3t'];
+    $about3desc = $row['about3desc'];
+
+    // $projects = $row['projects'];
+    // $services = $row['services'];
 ?>
 
 <tr>
     <td><?php echo $id; ?></td>
-    <td><?php echo $projects; ?></td>
-    <td><?php echo $services; ?></td>
+    <td><?php echo $about1t; ?></td>
+    <td><?php echo $about1desc; ?></td>
+    <td><?php echo $about2t; ?></td>
+    <td><?php echo $about2desc; ?></td>
+    <td><?php echo $about3t; ?></td>
+    <td><?php echo $about3desc; ?></td>
+    <td>
+        <a href="update.php?updateid=<?php echo $id; ?>" class="btn btn-primary">Update</a>
+        <a href="delete.php?deleteid=<?php echo $id; ?>" class="btn btn-danger">Remove</a>
+    </td>
+</tr>
+
+<?php } ?>
+
+</tbody>
+        </table>
+
+
+
+
+
+
+        <table>
+        <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Project 1 Title</th>
+                    <th>Project 1 Description</th>
+                    <th>Project Me 2 Title</th>
+                    <th>Project Me 2 Description</th>
+                    <th>Project 3 Title</th>
+                    <th>Project 3 Description</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+
+<?php
+$sql = "SELECT * FROM crud";
+$result = mysqli_query($con, $sql);
+
+while($row = mysqli_fetch_assoc($result)) {
+    $id = $row['id'];
+    $name = $row['name'];
+    $description = $row['description'];
+    $about = $row['about'];
+    $about1t = $row['about1t'];
+    $about1desc = $row['about1desc'];
+    $about2t = $row['about2t'];
+    $about2desc = $row['about2desc'];
+    $about3t = $row['about3t'];
+    $about3desc = $row['about3desc'];
+    $pt1 = $row['pt1'];
+    $pd1 = $row['pd1'];
+    $pt2 = $row['pt2'];
+    $pd2 = $row['pd2'];
+    $pt3 = $row['pt3'];
+    $pd3 = $row['pd3'];
+
+    // $projects = $row['projects'];
+    // $services = $row['services'];
+?>
+
+<tr>
+    <td><?php echo $id; ?></td>
+    <td><?php echo $pt1; ?></td>
+    <td><?php echo $pd1; ?></td>
+    <td><?php echo $pt2; ?></td>
+    <td><?php echo $pd2; ?></td>
+    <td><?php echo $pt3; ?></td>
+    <td><?php echo $pd3; ?></td>
     <td>
         <a href="update.php?updateid=<?php echo $id; ?>" class="btn btn-primary">Update</a>
         <a href="delete.php?deleteid=<?php echo $id; ?>" class="btn btn-danger">Remove</a>

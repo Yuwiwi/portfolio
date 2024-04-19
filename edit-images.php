@@ -18,7 +18,6 @@ include 'connect.php';
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #e6e5e5;
@@ -40,12 +39,17 @@ include 'connect.php';
             border-collapse: collapse;
             margin-bottom: 20px;
         }
-        table th, table td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
 
+        th {
+        background-color: #f2f2f2; /* Background color */
+        color: #333; /* Text color */
+        font-weight: bold; /* Bold text */
+        padding: 30px; /* Padding around content */
+        text-align: left; /* Align text to the left */
+        border-bottom: 2px solid #ddd; /* Bottom border */
+        margin: 120px;
         }
+
         table th {
             background-color: #f2f2f2;
         }
@@ -102,47 +106,69 @@ include 'connect.php';
         </div>
     </nav>
 
-    <div class="container-edit">
+    <div class="container">
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>About Me</th>
-                    <th>Operations</th>
+                    <th>Profile</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+                <?php
+                $sql = "SELECT * FROM crud";
+                $result = mysqli_query($con, $sql);
 
-            <?php
-            $sql = "SELECT * FROM crud";
-            $result = mysqli_query($con, $sql);
+                while($row = mysqli_fetch_assoc($result)) {
+                    $id = $row['id'];
+                    $profilee = $row['profilee'];
+                ?>
+                <tr>
+                    <td><?php echo $id; ?></td>
+                    <td><img src="uploads/<?php echo $profilee; ?>" alt="Profile Image" class="profile-img"></td>
+                    <td>
+                        <a href="update-img.php?updateid=<?php echo $id; ?>" class="btn btn-primary">Update</a>
+                        <a href="delete.php?deleteid=<?php echo $id; ?>" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
 
-            while($row = mysqli_fetch_assoc($result)) {
-                $id = $row['id'];
-                $name = $row['name'];
-                $description = $row['description'];
-                $about = $row['about'];
-                $projects = $row['projects'];
-                $services = $row['services'];
-            ?>
 
-            <tr>
-                <td><?php echo $id; ?></td>
-                <td><?php echo $name; ?></td>
-                <td><?php echo $description; ?></td>
-                <td><?php echo $about; ?></td>
-                <!-- <td><?php echo $projects; ?></td>
-                <td><?php echo $services; ?></td> -->
-                <td>
-                    <a href="update.php?updateid=<?php echo $id; ?>" class="btn btn-primary">Update</a>
-                    <a href="delete.php?deleteid=<?php echo $id; ?>" class="btn btn-danger">Remove</a>
-                </td>
-            </tr>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Project 1</th>
+                    <th>Project 2</th>
+                    <th>Project 3</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = "SELECT * FROM crud";
+                $result = mysqli_query($con, $sql);
 
-            <?php } ?>
-
+                while($row = mysqli_fetch_assoc($result)) {
+                    $id = $row['id'];
+                    $pr1 = $row['pr1'];
+                    $pr2 = $row['pr2'];
+                    $pr3 = $row['pr3'];
+                ?>
+                <tr>
+                    <td><?php echo $id; ?></td>
+                    <td><img src="uploads/<?php echo $pr1; ?>" alt="Project Image" class="profile-img"></td>
+                    <td><img src="uploads/<?php echo $pr2; ?>" alt="Project Image" class="profile-img"></td>
+                    <td><img src="uploads/<?php echo $pr3; ?>" alt="Project Image" class="profile-img"></td>
+                    <td>
+                        <a href="update-img.php?updateid=<?php echo $id; ?>" class="btn btn-primary">Update</a>
+                        <a href="delete.php?deleteid=<?php echo $id; ?>" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+                <?php } ?>
             </tbody>
         </table>
 
@@ -150,46 +176,121 @@ include 'connect.php';
 
 
 
-
         <table>
-        <thead>
+            <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Projects</th>
-                    <th>Services</th>
-                    <th>Operations</th>
+                    <th>Service 1</th>
+                    <th>Service 2</th>
+                    <th>Service 3</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+                <?php
+                $sql = "SELECT * FROM crud";
+                $result = mysqli_query($con, $sql);
 
-<?php
-$sql = "SELECT * FROM crud";
-$result = mysqli_query($con, $sql);
+                while($row = mysqli_fetch_assoc($result)) {
+                    $id = $row['id'];
+                    $s1 = $row['s1'];
+                    $s2 = $row['s2'];
+                    $s3 = $row['s3'];
+                ?>
+                <tr>
+                    <td><?php echo $id; ?></td>
+                    <td><img src="uploads/<?php echo $s1; ?>" alt="Service Image" class="profile-img"></td>
+                    <td><img src="uploads/<?php echo $s2; ?>" alt="Service Image" class="profile-img"></td>
+                    <td><img src="uploads/<?php echo $s3; ?>" alt="Service Image" class="profile-img"></td>
+                    <td>
+                        <a href="update-img.php?updateid=<?php echo $id; ?>" class="btn btn-primary">Update</a>
+                        <a href="delete.php?deleteid=<?php echo $id; ?>" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
 
-while($row = mysqli_fetch_assoc($result)) {
-    $id = $row['id'];
-    $name = $row['name'];
-    $description = $row['description'];
-    $about = $row['about'];
-    $projects = $row['projects'];
-    $services = $row['services'];
-?>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Service 4</th>
+                    <th>Service 5</th>
+                    <th>Service 6</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = "SELECT * FROM crud";
+                $result = mysqli_query($con, $sql);
 
-<tr>
-    <td><?php echo $id; ?></td>
-    <td><?php echo $projects; ?></td>
-    <td><?php echo $services; ?></td>
-    <td>
-        <a href="update.php?updateid=<?php echo $id; ?>" class="btn btn-primary">Update</a>
-        <a href="delete.php?deleteid=<?php echo $id; ?>" class="btn btn-danger">Remove</a>
-    </td>
-</tr>
+                while($row = mysqli_fetch_assoc($result)) {
+                    $id = $row['id'];
+                    $s4 = $row['s4'];
+                    $s5 = $row['s5'];
+                    $s6 = $row['s6'];
+                ?>
+                <tr>
+                    <td><?php echo $id; ?></td>
+                    <td><img src="uploads/<?php echo $s4; ?>" alt="Service Image" class="profile-img"></td>
+                    <td><img src="uploads/<?php echo $s5; ?>" alt="Service Image" class="profile-img"></td>
+                    <td><img src="uploads/<?php echo $s6; ?>" alt="Service Image" class="profile-img"></td>
+                    <td>
+                        <a href="update-img.php?updateid=<?php echo $id; ?>" class="btn btn-primary">Update</a>
+                        <a href="delete.php?deleteid=<?php echo $id; ?>" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
 
-<?php } ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Service 7</th>
+                    <th>Service 8</th>
 
-</tbody>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = "SELECT * FROM crud";
+                $result = mysqli_query($con, $sql);
+
+                while($row = mysqli_fetch_assoc($result)) {
+                    $id = $row['id'];
+                    $s7 = $row['s7'];
+                    $s8 = $row['s8'];
+
+                ?>
+                <tr>
+                    <td><?php echo $id; ?></td>
+                    <td><img src="uploads/<?php echo $s7; ?>" alt="Service Image" class="profile-img"></td>
+                    <td><img src="uploads/<?php echo $s8; ?>" alt="Service Image" class="profile-img"></td>
+                    <td>
+                        <a href="update-img.php?updateid=<?php echo $id; ?>" class="btn btn-primary">Update</a>
+                        <a href="delete.php?deleteid=<?php echo $id; ?>" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
         </table>
     </div>
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
